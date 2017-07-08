@@ -34,14 +34,14 @@ final class Analyzer {
 
         init(_ name: String) throws {
             switch name {
-                //            case "Podfile":
-            //                self = .cocoapods
+//            case "Podfile":
+//                self = .cocoapods
             case "Podfile.lock":
                 self = .cocoapods
-            case "Cartfile":
+//            case "Cartfile":
+//                self = .carthage
+            case "Cartfile.resolved":
                 self = .carthage
-                //            case "Cartfile.resolved":
-            //                self = .carthage
             default:
                 let url = URL(fileURLWithPath: name)
                 if url.pathExtension == "pbxproj" {

@@ -29,7 +29,7 @@ struct CocoapodsExecutor: ExecutorType {
                 debugPrint(error)
                 throw ExecutorError(code: .parseFail)
             }
-            }()
+        }()
 
         let json = hash.toJSON()
         debugPrint(json)
