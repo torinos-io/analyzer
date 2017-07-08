@@ -1,0 +1,13 @@
+version: '2.1'
+
+services:
+  app:
+    image: torinosio/analyzer:dev
+    build: .
+    volumes:
+      - ..:/app
+    extra_hosts:
+      localhost: "${DOCKER_HOST_IP}"
+    ports:
+      - 5001:5001
+    command: tail -f /dev/null
