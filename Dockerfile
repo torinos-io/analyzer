@@ -25,3 +25,5 @@ WORKDIR /app
 
 COPY Config Config
 COPY .build/release release
+
+CMD ["/app/release/Run", "--env=production"]
