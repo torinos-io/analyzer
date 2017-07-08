@@ -114,6 +114,12 @@
       "reason": null,
       "repositoryURL": "https://github.com/vapor/vapor.git",
       "version": "2.1.0"
+    },
+    {
+      "package": "Yaml",
+      "reason": null,
+      "repositoryURL": "https://github.com/behrang/YamlSwift.git",
+      "version": "3.4.0"
     }
   ],
   "version": 1
