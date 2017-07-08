@@ -18,4 +18,7 @@ RUN curl -sL https://apt.vapor.sh | bash \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
+RUN git config --global user.email "admin@torinos.io" \
+  && git config --global user.name "Torinos Bot"
+
 WORKDIR /app
