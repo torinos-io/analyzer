@@ -1,0 +1,4 @@
+module CSQLite {
+    umbrella "/Users/yuta24/ghq/github.com/torinos-io/analyzer/.build/checkouts/sqlite.git-6123313951918380887/Sources/CSQLite/include"
+    export *
+}
