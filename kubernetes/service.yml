@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: torinos-analyzer
+  namespace: torinos-analyzer
+  labels:
+    name: torinos-analyzer
+    role: web
+spec:
+  type: LoadBalancer
+  selector:
+    name: torinos-analyzer
+    role: web
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
