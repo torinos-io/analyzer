@@ -1,6 +1,8 @@
 analyzer
 ========
 
+[![CircleCI](https://circleci.com/gh/torinos-io/analyzer.svg?style=svg&circle-token=d217bc4889e5ba4f68ced27b79cafdc47da8fb17)](https://circleci.com/gh/torinos-io/analyzer)
+
 Xcode project analyzer service
 
 
