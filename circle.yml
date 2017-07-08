@@ -15,7 +15,7 @@ machine:
 
 dependencies:
   cache_directories:
-    - vendor
+    - ./build/checkouts
 
   pre:
     - |
