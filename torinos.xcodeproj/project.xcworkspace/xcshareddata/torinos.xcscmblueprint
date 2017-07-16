@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "812C35347B79306943AEED0EF79FA5BFEEEE6A9A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A480BB2849036CF504F1F2E5D43B67BE59D35121" : 9223372036854775807,
+    "812C35347B79306943AEED0EF79FA5BFEEEE6A9A" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F4E7B2DF-B077-4872-8D6A-BA3CED504438",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A480BB2849036CF504F1F2E5D43B67BE59D35121" : "analyzer\/.build\/checkouts\/AEXML.git--1992474868199569405\/",
+    "812C35347B79306943AEED0EF79FA5BFEEEE6A9A" : "analyzer\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "torinos",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "torinos.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/github.com\/torinos-io\/analyzer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "812C35347B79306943AEED0EF79FA5BFEEEE6A9A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/yuta24\/ghq\/github.com\/torinos-io\/analyzer\/.build\/repositories\/AEXML.git--1992474868199569405",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A480BB2849036CF504F1F2E5D43B67BE59D35121"
+    }
+  ]
+}
