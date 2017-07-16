@@ -69,6 +69,8 @@ struct XCProjectExecutor: ExecutorType {
         }()
         debugPrint(xml)
 
+        // TODO: get swift version from project file
+
         return ExecutorResult(json: JSON(.object([
                 "swift_version": .number(.double(2.3))
             ])))
