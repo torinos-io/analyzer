@@ -122,10 +122,10 @@
       "version": "2.1.0"
     },
     {
-      "package": "Yaml",
+      "package": "Yams",
       "reason": null,
-      "repositoryURL": "https://github.com/behrang/YamlSwift.git",
-      "version": "3.4.0"
+      "repositoryURL": "https://github.com/jpsim/Yams.git",
+      "version": "0.3.3"
     }
   ],
   "version": 1

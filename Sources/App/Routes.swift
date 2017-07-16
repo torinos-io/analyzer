@@ -29,9 +29,12 @@ extension Droplet {
             guard let inputs = inputsOrNil else {
                 return Response(status: .badRequest)
             }
-            debugPrint(inputs)
             do {
-                let result = try inputs.map { try Analyzer.default.execute(input: (name: $0.0, stream: $0.1)) }.flatMap { $0.json }
+                let result = try inputs.map { (input) -> Analyzer.Output in
+                        debugPrint(#file, #line, input.name)
+                        return try Analyzer.default.execute(input: (name: input.name, stream: input.stream))
+                    }
+                    .flatMap { $0.json }
                 return JSON(result)
             } catch {
                 guard let error = error as? AnalyzerError else {
