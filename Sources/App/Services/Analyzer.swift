@@ -58,7 +58,7 @@ final class Analyzer {
 
     static let `default` = Analyzer(factory: ExecutorCreator())
 
-    let executorFactory: ExecutorCreatorType
+    fileprivate let executorFactory: ExecutorCreatorType
 
     init(factory: ExecutorCreatorType) {
         self.executorFactory = factory
