@@ -3,12 +3,27 @@ import JSON
 
 extension Droplet {
     func setupRoutes() throws {
+        // input:
+        // {
+        //     "access_token": "",
+        //     "target_files": {
+        //         "Podfile.lock": ... ,
+        //         "Carthage.resolved": ... ,
+        //         "test.pbxproj": .. ,
+        //     }
+        // }
         put("analyze") { req in
             guard let json = (req.body.bytes.flatMap { try? JSON(bytes: $0) }) else {
                 return Response(status: .badRequest)
             }
             debugPrint(json)
-            let inputsOrNil = json.pathIndexableObject?.map { (key, value) -> Analyzer.Input in
+            guard let accessToken: String = try? json.get("access_token") else {
+                return Response(status: .badRequest)
+            }
+            guard let targetFiles: JSON = try? json.get("target_files") else {
+                return Response(status: .badRequest)
+            }
+            let inputsOrNil = targetFiles.pathIndexableObject?.map { (key, value) -> Analyzer.Input in
                     return (key, value.string ?? "")
                 }
             guard let inputs = inputsOrNil else {

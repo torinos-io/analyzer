@@ -53,6 +53,7 @@ struct CarthageExecutor: ExecutorType {
             .valueMap {
                 .string($0)
             }
+        debugPrint(value)
         return ExecutorResult(json: JSON(.object(value)))
     }
 }
