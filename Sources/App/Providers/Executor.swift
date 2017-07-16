@@ -1,10 +1,12 @@
 import Foundation
 import Yaml
 import JSON
+import AEXML
 
 struct ExecutorError: Error {
     enum Code: String {
         case parseFail
+        case readXmlFail
     }
 
     let code: Code
@@ -57,7 +59,19 @@ struct CarthageExecutor: ExecutorType {
 
 struct XCProjectExecutor: ExecutorType {
     func handle(_ stream: String) throws -> ExecutorResult {
-        notImplement()
+        let xml = try { () -> AEXMLDocument in
+            do {
+                return try AEXMLDocument(xml: stream)
+            } catch {
+                debugPrint(error)
+                throw ExecutorError(code: .readXmlFail)
+            }
+        }()
+        debugPrint(xml)
+
+        return ExecutorResult(json: JSON(.object([
+                "swift_version": .number(.double(2.3))
+            ])))
     }
 }
 
