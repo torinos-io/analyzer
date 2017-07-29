@@ -54,7 +54,7 @@ struct CarthageExecutor: ExecutorType {
                 debugPrint(#file, #line, words)
                 guard let key = words.second else { return nil }
                 guard let value = words.third else { return nil }
-                return [key: value]
+                return [removeUnnecessaryChar(key): removeUnnecessaryChar(value)]
             }
             .toDictionary()
             .valueMap {
@@ -62,6 +62,11 @@ struct CarthageExecutor: ExecutorType {
             }
         debugPrint(#file, #line, value)
         return ExecutorResult(json: JSON(.object(value)))
+    }
+
+    func removeUnnecessaryChar(_ original: String) -> String {
+        return original.replacingOccurrences(of: "\"", with: "")
+            .replacingOccurrences(of: "\r", with: "")
     }
 }
 
@@ -233,11 +238,11 @@ extension StructuredData {
 
 private extension Array {
     var second: Element? {
-        guard self.count > 2 else { return nil }
+        guard self.count >= 2 else { return nil }
         return self[1]
     }
     var third: Element? {
-        guard self.count > 3 else { return nil }
+        guard self.count >= 3 else { return nil }
         return self[2]
     }
 }
