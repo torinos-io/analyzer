@@ -10,7 +10,6 @@ let package = Package(
         .Package(url: "https://github.com/vapor/vapor.git", majorVersion: 2),
         .Package(url: "https://github.com/vapor/fluent-provider.git", majorVersion: 1),
         .Package(url: "https://github.com/jpsim/Yams.git", majorVersion: 0),
-        .Package(url: "https://github.com/tadija/AEXML.git", majorVersion: 4)
     ],
     exclude: [
         "Config",

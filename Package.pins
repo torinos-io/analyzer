@@ -2,12 +2,6 @@
   "autoPin": true,
   "pins": [
     {
-      "package": "AEXML",
-      "reason": null,
-      "repositoryURL": "https://github.com/tadija/AEXML.git",
-      "version": "4.1.0"
-    },
-    {
       "package": "BCrypt",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/bcrypt.git",
@@ -17,12 +11,6 @@
       "package": "Bits",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/bits.git",
-      "version": "1.0.0"
-    },
-    {
-      "package": "CTLS",
-      "reason": null,
-      "repositoryURL": "https://github.com/vapor/ctls.git",
       "version": "1.0.0"
     },
     {
@@ -42,6 +30,12 @@
       "reason": null,
       "repositoryURL": "https://github.com/vapor/crypto.git",
       "version": "2.0.0"
+    },
+    {
+      "package": "CTLS",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/ctls.git",
+      "version": "1.0.0"
     },
     {
       "package": "Debugging",
@@ -98,16 +92,16 @@
       "version": "2.0.0"
     },
     {
-      "package": "SQLite",
-      "reason": null,
-      "repositoryURL": "https://github.com/vapor/sqlite.git",
-      "version": "2.0.0"
-    },
-    {
       "package": "Sockets",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/sockets.git",
       "version": "2.0.1"
+    },
+    {
+      "package": "SQLite",
+      "reason": null,
+      "repositoryURL": "https://github.com/vapor/sqlite.git",
+      "version": "2.0.0"
     },
     {
       "package": "TLS",
@@ -120,6 +114,12 @@
       "reason": null,
       "repositoryURL": "https://github.com/vapor/vapor.git",
       "version": "2.1.0"
+    },
+    {
+      "package": "XcodeEdit",
+      "reason": null,
+      "repositoryURL": "https://github.com/tomlokhorst/XcodeEdit",
+      "version": "1.1.0"
     },
     {
       "package": "Yams",

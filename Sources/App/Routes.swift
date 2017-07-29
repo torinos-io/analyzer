@@ -12,11 +12,10 @@ extension Droplet {
         //         "test.pbxproj": .. ,
         //     }
         // }
-        put("analyze") { req in
+        put("analyze") { [unowned self] req in
             guard let json = (req.body.bytes.flatMap { try? JSON(bytes: $0) }) else {
                 return Response(status: .badRequest)
             }
-            debugPrint(json)
             guard let accessToken: String = try? json.get("access_token") else {
                 return Response(status: .badRequest)
             }
@@ -24,7 +23,8 @@ extension Droplet {
                 return Response(status: .badRequest)
             }
             let inputsOrNil = targetFiles.pathIndexableObject?.map { (key, value) -> Analyzer.Input in
-                    return (key, value.string ?? "")
+                let string = value.bytes?.base64Decoded.makeString()
+                    return (key, string ?? "")
                 }
             guard let inputs = inputsOrNil else {
                 return Response(status: .badRequest)
@@ -37,13 +37,7 @@ extension Droplet {
                     .flatMap { $0.json }
                 return JSON(result)
             } catch {
-                guard let error = error as? AnalyzerError else {
-                    return Response(status: .internalServerError)
-                }
-                switch error.code {
-                case .unknownFileType:
-                    return Response(status: .badRequest)
-                }
+                return self.handlError(error)
             }
         }
 
@@ -56,5 +50,18 @@ extension Droplet {
         get("description") { req in return req.description }
         
         try resource("posts", PostController.self)
+    }
+
+    private func handlError(_ error: Error) -> Response {
+        switch error {
+        case let error as AnalyzerError:
+            debugPrint(#file, #line, error)
+            return Response(status: .badRequest)
+        case let error as ExecutorError:
+            debugPrint(#file, #line, error)
+            return Response(status: .badRequest)
+        default:
+            return Response(status: .internalServerError)
+        }
     }
 }

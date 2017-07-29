@@ -1,7 +1,7 @@
 import Foundation
 import Yams
 import JSON
-import AEXML
+import XcodeEdit
 
 struct ExecutorError: Error {
     enum Code: String {
@@ -66,21 +66,70 @@ struct CarthageExecutor: ExecutorType {
 }
 
 struct XCProjectExecutor: ExecutorType {
+    private typealias XCObject = [String: Any]
     func handle(_ stream: String) throws -> ExecutorResult {
-        let xml = try { () -> AEXMLDocument in
-            do {
-                return try AEXMLDocument(xml: stream)
-            } catch {
-                debugPrint(error)
-                throw ExecutorError(code: .readXmlFail)
-            }
-        }()
-        debugPrint(#file, #line, xml)
+        guard let _ = try? DataFile().write(stream.makeBytes(), to: "/tmp/project.pbxproj") else {
+            throw ExecutorError(code: .invalidFormat)
+        }
+        guard let url = URL(string: "/tmp/project.pbxproj") else {
+            throw ExecutorError(code: .parseFail)
+        }
 
-        // TODO: get swift version from project file
+        guard let stream = InputStream(fileAtPath: url.absoluteString) else {
+            throw ExecutorError(code: .parseFail)
+        }
+        stream.open()
+        defer { stream.close() }
+        var format: PropertyListSerialization.PropertyListFormat = PropertyListSerialization.PropertyListFormat.binary
+        let obj = try PropertyListSerialization.propertyList(
+            with: stream,
+            options: PropertyListSerialization.MutabilityOptions(),
+            format: &format)
+        guard let xcodeProject = obj as? XCObject else {
+            throw ExecutorError(code: .parseFail)
+        }
+
+        debugPrint(#file, #line, xcodeProject)
+
+        guard let projectId = xcodeProject["rootObject"] as? String else {
+            throw ExecutorError(code: .invalidFormat)
+        }
+        debugPrint(#file, #line, projectId)
+        guard let objects = xcodeProject["objects"] as? XCObject else {
+            throw ExecutorError(code: .invalidFormat)
+        }
+        debugPrint(#file, #line, objects)
+        guard let project = objects[projectId] as? XCObject else {
+            throw ExecutorError(code: .invalidFormat)
+        }
+        guard let configurationListId = project["buildConfigurationList"] as? String else {
+            debugPrint(#file, #line)
+            throw ExecutorError(code: .invalidFormat)
+        }
+        debugPrint(#file, #line, configurationListId)
+        guard let buildConfigurationList = objects[configurationListId] as? XCObject else {
+            throw ExecutorError(code: .invalidFormat)
+        }
+        guard let buildConfigurations = buildConfigurationList["buildConfigurations"] as? [String] else {
+            throw ExecutorError(code: .invalidFormat)
+        }
+        guard let releasedId = buildConfigurations.last else {
+            throw ExecutorError(code: .invalidFormat)
+        }
+        debugPrint(#file, #line, releasedId)
+        guard let buildConfiguration = objects[releasedId] as? XCObject else {
+            throw ExecutorError(code: .invalidFormat)
+        }
+        guard let buildSettings = buildConfiguration["buildSettings"] as? XCObject else {
+            throw ExecutorError(code: .invalidFormat)
+        }
+        guard let version = buildSettings["SWIFT_VERSION"] as? String else {
+            throw ExecutorError(code: .invalidFormat)
+        }
+        debugPrint(#file, #line, version)
 
         return ExecutorResult(json: JSON(.object([
-                "swift_version": .number(.double(2.3))
+                "swift_version": .string(version)
             ])))
     }
 }
