@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BB408091F2C7CB300845BF7 /* ControllerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB408061F2C7B6400845BF7 /* ControllerError.swift */; };
 		OBJ_1000 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_780 /* Core.framework */; };
 		OBJ_1010 /* Certificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_642 /* Certificates.swift */; };
 		OBJ_1011 /* ClientSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_643 /* ClientSocket.swift */; };
@@ -4481,6 +4482,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BB408061F2C7B6400845BF7 /* ControllerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerError.swift; sourceTree = "<group>"; };
 		OBJ_10 /* Droplet+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Droplet+Setup.swift"; sourceTree = "<group>"; };
 		OBJ_100 /* KeyNamingConvention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyNamingConvention.swift; sourceTree = "<group>"; };
 		OBJ_101 /* SoftDeletable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftDeletable.swift; sourceTree = "<group>"; };
@@ -5936,6 +5938,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_14 /* AnalyzeController.swift */,
+				2BB408061F2C7B6400845BF7 /* ControllerError.swift */,
 				OBJ_15 /* PostController.swift */,
 			);
 			path = Controllers;
@@ -9871,6 +9874,7 @@
 				OBJ_2364 /* PostController.swift in Sources */,
 				OBJ_2365 /* Post.swift in Sources */,
 				OBJ_2366 /* Analyzer.swift in Sources */,
+				2BB408091F2C7CB300845BF7 /* ControllerError.swift in Sources */,
 				OBJ_2367 /* Executor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
