@@ -36,13 +36,41 @@ struct CocoapodsExecutor: ExecutorType {
         guard let yaml = yamlOrNil, let structured = try? StructuredData(foundationJSON: yaml) else {
             throw ExecutorError(code: .parseFail)
         }
-        do {
-            let json: JSON = try JSON(structured).get(type(of: self).key)
-            debugPrint(#file, #line, json)
-            return ExecutorResult(json: json)
-        } catch {
+        guard let json: JSON = try? JSON(structured).get(type(of: self).key) else {
             throw ExecutorError(code: .invalidFormat)
         }
+        debugPrint(#file, #line, json)
+        let keysOrNil: [String]? = json.array?.flatMap {
+            switch $0.wrapped.foundationJSON {
+            case let object as [String: Any]:
+                return object.keys.first
+            case let string as String:
+                return string
+            default:
+                return nil
+            }
+        }
+        guard let keys = keysOrNil else {
+            throw ExecutorError(code: .invalidFormat)
+        }
+        let value: [String: StructuredData] = keys.flatMap { (key) -> [String: Any]? in
+                let words = key.components(separatedBy: " ")
+                debugPrint(#file, #line, key)
+                guard let key = words.first else { return nil }
+                guard let value = words.second else { return nil }
+                return [key: removeUnnecessaryChar(value)]
+            }
+            .toDictionary()
+            .valueMap {
+                .string($0)
+            }
+        debugPrint(#file, #line, value)
+        return ExecutorResult(json: JSON(.object(value)))
+    }
+
+    func removeUnnecessaryChar(_ original: String) -> String {
+        return original.replacingOccurrences(of: "(", with: "")
+            .replacingOccurrences(of: ")", with: "")
     }
 }
 
