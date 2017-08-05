@@ -1,7 +1,6 @@
 import Foundation
 import Yams
 import JSON
-import XcodeEdit
 
 struct ExecutorError: Error {
     enum Code: String {
@@ -14,6 +13,7 @@ struct ExecutorError: Error {
 }
 
 struct ExecutorResult {
+    let fileType: Analyzer.FileType
     let json: JSON
 }
 
@@ -65,7 +65,7 @@ struct CocoapodsExecutor: ExecutorType {
                 .string($0)
             }
         debugPrint(#file, #line, value)
-        return ExecutorResult(json: JSON(.object(value)))
+        return ExecutorResult(fileType: .cocoapods, json: JSON(.object(value)))
     }
 
     func removeUnnecessaryChar(_ original: String) -> String {
@@ -89,7 +89,7 @@ struct CarthageExecutor: ExecutorType {
                 .string($0)
             }
         debugPrint(#file, #line, value)
-        return ExecutorResult(json: JSON(.object(value)))
+        return ExecutorResult(fileType: .carthage, json: JSON(.object(value)))
     }
 
     func removeUnnecessaryChar(_ original: String) -> String {
@@ -161,7 +161,7 @@ struct XCProjectExecutor: ExecutorType {
         }
         debugPrint(#file, #line, version)
 
-        return ExecutorResult(json: JSON(.object([
+        return ExecutorResult(fileType: .xcproject, json: JSON(.object([
                 "swift_version": .string(version)
             ])))
     }
@@ -261,48 +261,5 @@ extension StructuredData {
             let string = Date.outgoingDateFormatter.string(from: date)
             return string
         }
-    }
-}
-
-private extension Array {
-    var second: Element? {
-        guard self.count >= 2 else { return nil }
-        return self[1]
-    }
-    var third: Element? {
-        guard self.count >= 3 else { return nil }
-        return self[2]
-    }
-}
-
-private extension Array {
-    func toDictionary<Key, Value>() -> [Key: Value] {
-        let elements = self.flatMap { $0 as? [Key: Value] }
-        guard elements.count > 0 else { return [:] }
-        return elements.reduce([:], { (result, element) -> [Key: Value] in
-            var newValue = [Key: Value]()
-            element.enumerated().forEach {
-                newValue[$1.key] = $1.value
-            }
-            return result.merge(newValue)
-        })
-    }
-}
-
-private extension Dictionary {
-    func valueMap<T>(transform: @escaping (Value) -> T) -> [Key: T] {
-        var newValue = [Key: T]()
-        self.forEach {
-            newValue[$0.key] = transform($0.value)
-        }
-        return newValue
-    }
-
-    func merge(_ b: [Key: Value]) -> [Key: Value] {
-        var newValue = self
-        b.forEach {
-            newValue[$0] = $1
-        }
-        return newValue
     }
 }
