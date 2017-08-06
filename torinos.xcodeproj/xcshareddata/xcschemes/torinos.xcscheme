@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_800"
+               BlueprintIdentifier = "OBJ_820"
                BuildableName = "Bits.framework"
                BlueprintName = "Bits"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_825"
+               BlueprintIdentifier = "OBJ_845"
                BuildableName = "Debugging.framework"
                BlueprintName = "Debugging"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_832"
+               BlueprintIdentifier = "OBJ_852"
                BuildableName = "libc.framework"
                BlueprintName = "libc"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -56,7 +56,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_843"
+               BlueprintIdentifier = "OBJ_863"
                BuildableName = "Core.framework"
                BlueprintName = "Core"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -70,7 +70,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_878"
+               BlueprintIdentifier = "OBJ_898"
                BuildableName = "Random.framework"
                BlueprintName = "Random"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -84,7 +84,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_898"
+               BlueprintIdentifier = "OBJ_918"
                BuildableName = "Crypto.framework"
                BlueprintName = "Crypto"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -98,7 +98,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_927"
+               BlueprintIdentifier = "OBJ_947"
                BuildableName = "Sockets.framework"
                BlueprintName = "Sockets"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -112,7 +112,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_965"
+               BlueprintIdentifier = "OBJ_985"
                BuildableName = "Transport.framework"
                BlueprintName = "Transport"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -126,7 +126,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_989"
+               BlueprintIdentifier = "OBJ_1009"
                BuildableName = "TLS.framework"
                BlueprintName = "TLS"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -140,7 +140,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1019"
+               BlueprintIdentifier = "OBJ_1039"
                BuildableName = "CHTTP.framework"
                BlueprintName = "CHTTP"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -154,7 +154,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1045"
+               BlueprintIdentifier = "OBJ_1065"
                BuildableName = "Cookies.framework"
                BlueprintName = "Cookies"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -168,7 +168,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1088"
+               BlueprintIdentifier = "OBJ_1108"
                BuildableName = "SMTP.framework"
                BlueprintName = "SMTP"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -182,7 +182,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1085"
+               BlueprintIdentifier = "OBJ_1105"
                BuildableName = "URI.framework"
                BlueprintName = "URI"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -196,7 +196,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1087"
+               BlueprintIdentifier = "OBJ_1107"
                BuildableName = "HTTP.framework"
                BlueprintName = "HTTP"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -210,7 +210,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1233"
+               BlueprintIdentifier = "OBJ_1253"
                BuildableName = "WebSockets.framework"
                BlueprintName = "WebSockets"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -224,7 +224,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1277"
+               BlueprintIdentifier = "OBJ_1297"
                BuildableName = "Console.framework"
                BlueprintName = "Console"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -238,7 +238,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1326"
+               BlueprintIdentifier = "OBJ_1346"
                BuildableName = "Node.framework"
                BlueprintName = "Node"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -252,7 +252,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1380"
+               BlueprintIdentifier = "OBJ_1400"
                BuildableName = "PathIndexable.framework"
                BlueprintName = "PathIndexable"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -266,7 +266,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1396"
+               BlueprintIdentifier = "OBJ_1416"
                BuildableName = "JSON.framework"
                BlueprintName = "JSON"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -280,7 +280,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1423"
+               BlueprintIdentifier = "OBJ_1443"
                BuildableName = "Branches.framework"
                BlueprintName = "Branches"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -294,7 +294,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1466"
+               BlueprintIdentifier = "OBJ_1486"
                BuildableName = "Routing.framework"
                BlueprintName = "Routing"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -308,7 +308,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1518"
+               BlueprintIdentifier = "OBJ_1538"
                BuildableName = "Multipart.framework"
                BlueprintName = "Multipart"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -322,7 +322,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1560"
+               BlueprintIdentifier = "OBJ_1580"
                BuildableName = "FormData.framework"
                BlueprintName = "FormData"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -336,7 +336,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1602"
+               BlueprintIdentifier = "OBJ_1622"
                BuildableName = "BCrypt.framework"
                BlueprintName = "BCrypt"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -350,7 +350,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1627"
+               BlueprintIdentifier = "OBJ_1647"
                BuildableName = "Testing.framework"
                BlueprintName = "Testing"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -364,7 +364,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1694"
+               BlueprintIdentifier = "OBJ_1714"
                BuildableName = "Sessions.framework"
                BlueprintName = "Sessions"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -378,7 +378,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1698"
+               BlueprintIdentifier = "OBJ_1718"
                BuildableName = "Vapor.framework"
                BlueprintName = "Vapor"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -392,7 +392,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1696"
+               BlueprintIdentifier = "OBJ_1716"
                BuildableName = "Configs.framework"
                BlueprintName = "Configs"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -406,7 +406,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_1692"
+               BlueprintIdentifier = "OBJ_1712"
                BuildableName = "Cache.framework"
                BlueprintName = "Cache"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -420,7 +420,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_2038"
+               BlueprintIdentifier = "OBJ_2058"
                BuildableName = "CSQLite.framework"
                BlueprintName = "CSQLite"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -434,7 +434,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_2058"
+               BlueprintIdentifier = "OBJ_2078"
                BuildableName = "SQLite.framework"
                BlueprintName = "SQLite"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -448,7 +448,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_2081"
+               BlueprintIdentifier = "OBJ_2101"
                BuildableName = "Fluent.framework"
                BlueprintName = "Fluent"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -462,7 +462,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_2169"
+               BlueprintIdentifier = "OBJ_2189"
                BuildableName = "FluentTester.framework"
                BlueprintName = "FluentTester"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -476,7 +476,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_2211"
+               BlueprintIdentifier = "OBJ_2231"
                BuildableName = "FluentProvider.framework"
                BlueprintName = "FluentProvider"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -490,9 +490,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_2302"
-               BuildableName = "Yaml.framework"
-               BlueprintName = "Yaml"
+               BlueprintIdentifier = "OBJ_2322"
+               BuildableName = "CYaml.framework"
+               BlueprintName = "CYaml"
                ReferencedContainer = "container:torinos.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -504,9 +504,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_2314"
-               BuildableName = "AEXML.framework"
-               BlueprintName = "AEXML"
+               BlueprintIdentifier = "OBJ_2337"
+               BuildableName = "Yams.framework"
+               BlueprintName = "Yams"
                ReferencedContainer = "container:torinos.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -518,7 +518,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_2325"
+               BlueprintIdentifier = "OBJ_2358"
                BuildableName = "App.framework"
                BlueprintName = "App"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -532,7 +532,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_2411"
+               BlueprintIdentifier = "OBJ_2448"
                BuildableName = "Run"
                BlueprintName = "Run"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -550,7 +550,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_2492"
+               BlueprintIdentifier = "OBJ_2529"
                BuildableName = "AppTests.xctest"
                BlueprintName = "AppTests"
                ReferencedContainer = "container:torinos.xcodeproj">
@@ -573,7 +573,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "OBJ_800"
+            BlueprintIdentifier = "OBJ_820"
             BuildableName = "Bits.framework"
             BlueprintName = "Bits"
             ReferencedContainer = "container:torinos.xcodeproj">

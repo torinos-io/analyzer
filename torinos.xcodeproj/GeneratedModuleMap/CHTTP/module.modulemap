@@ -1,4 +1,4 @@
 module CHTTP {
-    umbrella "/Users/yuta24/ghq/github.com/torinos-io/analyzer/.build/checkouts/engine.git-6984514723901657242/Sources/CHTTP/include"
+    umbrella "/Users/yuta24/ghq/github.com/torinos-io/analyzer/.build/checkouts/engine.git-5600657639756286579/Sources/CHTTP/include"
     export *
 }
