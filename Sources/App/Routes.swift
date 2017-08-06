@@ -3,7 +3,7 @@ import JSON
 
 extension Droplet {
     func setupRoutes() throws {
-        let analyzeController = AnalyzeController()
+        let analyzeController = AnalyzeController(drop: self)
         put("analyze", handler: analyzeController.execute)
 
         // response to requests to /info domain

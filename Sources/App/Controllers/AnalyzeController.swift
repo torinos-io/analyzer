@@ -1,7 +1,13 @@
 import Vapor
 import HTTP
+import App
 
 final class AnalyzeController {
+    fileprivate let drop: Droplet
+    init(drop: Droplet) {
+        self.drop = drop
+    }
+
     func execute(_ request: Request) throws -> ResponseRepresentable {
 
         // input:
@@ -64,13 +70,20 @@ final class AnalyzeController {
                 guard let (a, b) = $0.json.object?.components(separatedBy: needFetch) else {
                     return $0
                 }
+                let fetched: [Analyzer.Output] = a.map { fetchFromGithub(repo: $0.key) }.map {
+                        $0.flatMap { try? Analyzer.default.execute(input: Analyzer.Input(name: $0.name, stream: $0.stream)) }
+                    }
+                    .reduce([], { (result, value) -> [Analyzer.Output] in
+                        result + value
+                    })
+                debugPrint(#file, #line, fetched)
                 let merged: [String: JSON] = a.merge(b).map {
-                    [$0.key: $0.value]
-                }
-                .toDictionary()
+                        [$0.key: $0.value]
+                    }
+                    .toDictionary()
                 let value: [String: StructuredData] = merged.valueMap {
-                    $0.wrapped
-                }
+                        $0.wrapped
+                    }
                 debugPrint(#file, #line, value)
                 return Analyzer.Output(fileType: $0.fileType, json: JSON(.object(value)))
             case .xcproject:
@@ -82,6 +95,31 @@ final class AnalyzeController {
 
     private func needFetch(_ json: JSON) -> Bool {
         return true
+    }
+
+    private func fetchFromGithub(repo: String) -> [(name: String, stream: String)] {
+        debugPrint(#file, #line, repo)
+        guard let projectName = repo.components(separatedBy: "/").second else { return [] }
+        var result = [(name: String, stream: String)]()
+        if let cocoapods = try? drop.client.get("https://raw.githubusercontent.com/\(repo)/master/Podfile.lock") {
+            debugPrint(#file, #line, cocoapods.status)
+            if cocoapods.status == .ok {
+                result.append((name: "Podfile.lock", stream: cocoapods.body.bytes?.makeString() ?? ""))
+            }
+        }
+        if let carthage = try? drop.client.get("https://raw.githubusercontent.com/\(repo)/master/Cartfile.resolved") {
+            debugPrint(#file, #line, carthage.status)
+            if carthage.status == .ok {
+                result.append((name: "Cartfile.resolved", stream: carthage.body.bytes?.makeString() ?? ""))
+            }
+        }
+        if let project = try? drop.client.get("https://raw.githubusercontent.com/\(repo)/master/\(projectName).xcodeproj/project.pbxproj") {
+            debugPrint(#file, #line, project.status)
+            if project.status == .ok {
+                result.append((name: "project.pbxproj", stream: project.body.bytes?.makeString() ?? ""))
+            }
+        }
+        return result
     }
 }
 
